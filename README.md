@@ -2,6 +2,8 @@
 
 Groep 4, DataLab I.
 
+**De app online:** <https://datalab-elektriciteit.streamlit.app> (Streamlit Community Cloud; bijgewerkt bij elke push naar `main`).
+
 ## Onderzoeksvraag
 
 > Hoe nauwkeurig kunnen we de gemiddelde jaarlijkse elektriciteitslevering per particuliere woning in een CBS-buurt schatten op basis van beschikbare buurtkenmerken?
