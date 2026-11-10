@@ -1,0 +1,87 @@
+{
+  "rijen_ruw_bestand": 18116,
+  "rijen_per_regiosoort": {
+    "Buurt": 14421,
+    "Wijk": 3352,
+    "Gemeente": 342,
+    "Land": 1
+  },
+  "buurten": 14421,
+  "unieke_buurtcodes": 14421,
+  "dubbele_buurtcodes": 0,
+  "buurtcodes_met_letters_in_wijk_of_buurtdeel": 517,
+  "gemeenten_in_buurten": 342,
+  "max_namen_per_gemeentecode": 1,
+  "max_codes_per_gemeentenaam": 1,
+  "gemeentecodes_zonder_gemeenterij": [],
+  "buurten_met_doelwaarde": 13453,
+  "buurten_zonder_doelwaarde": 968,
+  "gemeenten_met_minstens_een_doelwaarde": 342,
+  "doelwaarde_beschrijving_kwh": {
+    "count": 13453.0,
+    "mean": 3002.0,
+    "std": 827.0,
+    "min": 890.0,
+    "25%": 2370.0,
+    "50%": 2830.0,
+    "75%": 3620.0,
+    "max": 8310.0
+  },
+  "doelwaarde_geimputeerd": false,
+  "missende_kenmerken_binnen_buurten_met_doel": {
+    "gem_huishoudensgrootte": 13,
+    "pct_bouwjaar_vanaf_2000": 697,
+    "pct_koopwoningen": 697,
+    "pct_meergezinswoning": 697,
+    "stedelijkheid": 0,
+    "woz_waarde_x1000": 831
+  },
+  "percentages_buiten_0_100": {
+    "pct_meergezinswoning": 0,
+    "pct_eengezinswoning": 0,
+    "pct_bouwjaar_vanaf_2000": 0,
+    "pct_bouwjaar_voor_2000": 0,
+    "pct_koopwoningen": 0,
+    "pct_bewoond": 0
+  },
+  "som_complementaire_percentages": {
+    "pct_eengezinswoning + pct_meergezinswoning": {
+      "min": 100.0,
+      "max": 101.0,
+      "aantal": 12765
+    },
+    "pct_bouwjaar_voor_2000 + pct_bouwjaar_vanaf_2000": {
+      "min": 100.0,
+      "max": 101.0,
+      "aantal": 12765
+    }
+  },
+  "negatieve_waarden": {},
+  "stedelijkheid_codes": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0
+  ],
+  "uitval_vergelijking": {
+    "mediaan_woningvoorraad_met_label": 353.0,
+    "mediaan_woningvoorraad_zonder_label": 1.0,
+    "aandeel_zonder_label_met_0_woningen": 0.43388429752066116,
+    "stedelijkheid_verdeling_met_label": {
+      "1.0": 0.135,
+      "2.0": 0.172,
+      "3.0": 0.134,
+      "4.0": 0.151,
+      "5.0": 0.408
+    },
+    "stedelijkheid_verdeling_zonder_label": {
+      "1.0": 0.05,
+      "2.0": 0.104,
+      "3.0": 0.137,
+      "4.0": 0.209,
+      "5.0": 0.5
+    }
+  },
+  "joins": "Geen joins: doel en kenmerken komen uit dezelfde CBS-tabel en dezelfde gebiedsindeling."
+}

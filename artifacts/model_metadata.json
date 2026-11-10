@@ -1,0 +1,172 @@
+{
+  "model_versie": "neighbourhood_electricity_delivery-20261110",
+  "getraind_op": "2026-11-10T13:45:07",
+  "gekozen_model": "random_forest_uitgebreid",
+  "kenmerken": [
+    "pct_meergezinswoning",
+    "pct_bouwjaar_vanaf_2000",
+    "gem_huishoudensgrootte",
+    "stedelijkheid",
+    "woz_waarde_x1000",
+    "pct_koopwoningen"
+  ],
+  "doel": {
+    "interne_naam": "electricity_delivery_kwh_per_dwelling_year",
+    "ruwe_kolom": "GemiddeldeElektriciteitsleveringTotaal_48",
+    "definitie": "Gemiddelde jaarlijkse elektriciteitslevering uit het openbare net op individuele aansluitingen van particuliere woningen, alle woningtypen samen. Collectieve levering (bijv. lift, galerijverlichting) telt niet mee. Direct verbruikte eigen opwek (zonnepanelen) zit hier niet volledig in.",
+    "eenheid": "kWh per woning per jaar",
+    "referentiejaar": 2023,
+    "geografisch_niveau": "CBS-buurt (wijk- en buurtindeling 2023)",
+    "bron": "CBS 85618NED - Kerncijfers wijken en buurten 2023",
+    "wat_het_niet_is": [
+      "Niet het volledige elektriciteitsverbruik achter de meter (eigen opwek telt niet volledig mee).",
+      "Niet het totale energiegebruik van een buurt.",
+      "Niet het verbruik van één huishouden.",
+      "Niet het piekvermogen of de kans op netcongestie."
+    ]
+  },
+  "training": {
+    "n_buurten": 10878,
+    "n_gemeenten": 273
+  },
+  "test": {
+    "n_buurten": 2575,
+    "n_gemeenten": 69,
+    "MAE": 270.4251276122166,
+    "RMSE": 380.34034514281836,
+    "R2": 0.7648389196904002
+  },
+  "baseline_test": {
+    "MAE": 655.5145631067961,
+    "RMSE": 819.3655371658889,
+    "R2": -0.09138012573828869
+  },
+  "kenmerk_bereik_training": {
+    "pct_meergezinswoning": {
+      "min": 0.0,
+      "max": 100.0,
+      "p01": 0.0,
+      "p99": 100.0,
+      "mediaan": 13.0
+    },
+    "pct_bouwjaar_vanaf_2000": {
+      "min": 0.0,
+      "max": 100.0,
+      "p01": 0.0,
+      "p99": 100.0,
+      "mediaan": 11.0
+    },
+    "gem_huishoudensgrootte": {
+      "min": 1.0,
+      "max": 4.6,
+      "p01": 1.3,
+      "p99": 3.3,
+      "mediaan": 2.3
+    },
+    "stedelijkheid": {
+      "min": 1.0,
+      "max": 5.0,
+      "p01": 1.0,
+      "p99": 5.0,
+      "mediaan": 4.0
+    },
+    "woz_waarde_x1000": {
+      "min": 34.0,
+      "max": 2236.0,
+      "p01": 175.0,
+      "p99": 987.090000000002,
+      "mediaan": 388.5
+    },
+    "pct_koopwoningen": {
+      "min": 0.0,
+      "max": 100.0,
+      "p01": 1.0,
+      "p99": 99.0,
+      "mediaan": 74.0
+    }
+  },
+  "ridge_uitleg": {
+    "intercept_kwh": 2991.354109211252,
+    "coefficienten": [
+      {
+        "kenmerk": "pct_meergezinswoning",
+        "effect_per_standaarddeviatie_kwh": -21.574548303192298,
+        "standaarddeviatie": 27.367572101964097,
+        "effect_per_eenheid_kwh": -0.7883252567239587
+      },
+      {
+        "kenmerk": "pct_bouwjaar_vanaf_2000",
+        "effect_per_standaarddeviatie_kwh": -4.454214790660527,
+        "standaarddeviatie": 24.38627929826791,
+        "effect_per_eenheid_kwh": -0.18265249635588718
+      },
+      {
+        "kenmerk": "gem_huishoudensgrootte",
+        "effect_per_standaarddeviatie_kwh": 201.6784112964549,
+        "standaarddeviatie": 0.4090435946422389,
+        "effect_per_eenheid_kwh": 493.04869685796825
+      },
+      {
+        "kenmerk": "stedelijkheid",
+        "effect_per_standaarddeviatie_kwh": 290.004436379894,
+        "standaarddeviatie": 1.5051589059513768,
+        "effect_per_eenheid_kwh": 192.67363414800963
+      },
+      {
+        "kenmerk": "woz_waarde_x1000",
+        "effect_per_standaarddeviatie_kwh": 283.4079777413109,
+        "standaarddeviatie": 162.3760317476407,
+        "effect_per_eenheid_kwh": 1.7453806124648614
+      },
+      {
+        "kenmerk": "pct_koopwoningen",
+        "effect_per_standaarddeviatie_kwh": 119.54935541907126,
+        "standaarddeviatie": 22.71081261642117,
+        "effect_per_eenheid_kwh": 5.263984051923818
+      },
+      {
+        "kenmerk": "ontbreekt_pct_meergezinswoning",
+        "effect_per_standaarddeviatie_kwh": 42.071254508577795,
+        "standaarddeviatie": 0.22116127827333737,
+        "effect_per_eenheid_kwh": 190.22884492728036
+      },
+      {
+        "kenmerk": "ontbreekt_pct_bouwjaar_vanaf_2000",
+        "effect_per_standaarddeviatie_kwh": 42.071254508890405,
+        "standaarddeviatie": 0.22116127827333737,
+        "effect_per_eenheid_kwh": 190.22884492869386
+      },
+      {
+        "kenmerk": "ontbreekt_gem_huishoudensgrootte",
+        "effect_per_standaarddeviatie_kwh": -11.299749909020493,
+        "standaarddeviatie": 0.033195286317332776,
+        "effect_per_eenheid_kwh": -340.4022426858954
+      },
+      {
+        "kenmerk": "ontbreekt_woz_waarde_x1000",
+        "effect_per_standaarddeviatie_kwh": 41.50296429535744,
+        "standaarddeviatie": 0.24208222686828892,
+        "effect_per_eenheid_kwh": 171.44159995660564
+      },
+      {
+        "kenmerk": "ontbreekt_pct_koopwoningen",
+        "effect_per_standaarddeviatie_kwh": 42.07125455714194,
+        "standaarddeviatie": 0.22116127827333737,
+        "effect_per_eenheid_kwh": 190.2288451468674
+      }
+    ],
+    "let_op": "Samenhang, geen oorzaak. Effect per eenheid geldt als de andere kenmerken gelijk blijven."
+  },
+  "herlaadcontrole": {
+    "max_verschil_kwh": 2.2737367544323206e-12,
+    "tolerantie_kwh": 1e-06,
+    "geslaagd": true
+  },
+  "software": {
+    "python": "3.14.6",
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "joblib": "1.5.3"
+  }
+}

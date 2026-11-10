@@ -1,0 +1,173 @@
+{
+  "bronnen": [
+    {
+      "officiele_naam": "Kerncijfers wijken en buurten 2023",
+      "tabelcode": "85618NED",
+      "url": "https://opendata.cbs.nl/ODataApi/OData/85618NED",
+      "statline_url": "https://www.cbs.nl/nl-nl/cijfers/detail/85618NED",
+      "bestand": "data/raw/85618NED_kerncijfers_wijken_buurten_2023.csv",
+      "sha256_ongewijzigd_bestand": "bbb4868e779714895813964e54418d46e5524952f48fdbacf4b933d11623a283",
+      "bestand_gewijzigd_op": "2026-11-10T13:34:41",
+      "ophaalmethode": "CBS OData-API via het Python-pakket cbsodata (zie notebook Sprint3groep4final3.ipynb); ophaaldatum niet vastgelegd, bestandsdatum hierboven is de best beschikbare indicatie",
+      "bronversie_cbs_gewijzigd": "2026-03-31T02:00:00",
+      "periode": "2023",
+      "status_cbs": "Definitief, tenzij bij het onderwerp anders vermeld (tabeltoelichting CBS)",
+      "geografisch_niveau": "Gemeente, wijk en buurt; voor het model alleen buurt",
+      "gebiedsindeling": "Wijk- en buurtindeling 2023",
+      "extractiefilter": "Geen filter bij ophalen; filter SoortRegio_2 == 'Buurt' in prepare_data.py",
+      "afronding_en_geheimhouding": "Energiecijfers afgerond op tientallen kWh en alleen vermeld bij 6 of meer (bewoonde) woningen; woningpercentages alleen bij 20 of meer woningen; aantallen op buurtniveau afgerond op vijftallen.",
+      "metadata_bestanden": [
+        "data/metadata/85618NED_DataProperties.json",
+        "data/metadata/85618NED_TableInfos.json"
+      ],
+      "metadata_opgehaald_op": "2026-11-10T13:35:26",
+      "variabelen": [
+        {
+          "ruwe_kolom": "Codering_3",
+          "interne_naam": "buurt_code",
+          "titel_cbs": "Codering",
+          "eenheid_cbs": "code",
+          "beschrijving_cbs": "Gemeentecode heeft 4 posities, voorafgegaan door ‘GM’. Wijkcode heeft 6 posities: gemeentecode (4) + wijkcode (2), voorafgegaan door ‘WK’. Buurtcode heeft 8 posities: gemeentecode (4) + wijkcode (2) + buurtcode (2), voorafgegaan door ‘BU’.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 0
+        },
+        {
+          "ruwe_kolom": "WijkenEnBuurten",
+          "interne_naam": "buurt_naam",
+          "titel_cbs": "Wijken en buurten",
+          "eenheid_cbs": null,
+          "beschrijving_cbs": "",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 0
+        },
+        {
+          "ruwe_kolom": "Gemeentenaam_1",
+          "interne_naam": "gemeente_naam",
+          "titel_cbs": "Gemeentenaam",
+          "eenheid_cbs": "naam",
+          "beschrijving_cbs": "De naam van de bestuurlijke gemeente. Deze naam volgt de officiële schrijfwijze.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 0
+        },
+        {
+          "ruwe_kolom": "GemiddeldeElektriciteitsleveringTotaal_48",
+          "interne_naam": "electricity_delivery_kwh_per_dwelling_year",
+          "titel_cbs": "Gemiddelde elektriciteitslevering totaal",
+          "eenheid_cbs": "kWh",
+          "beschrijving_cbs": "De gemiddelde elektriciteitslevering voor alle woningtypen samen.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 968
+        },
+        {
+          "ruwe_kolom": "PercentageMeergezinswoning_38",
+          "interne_naam": "pct_meergezinswoning",
+          "titel_cbs": "Percentage meergezinswoning",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Peildatum: 1 januari van het desbetreffende jaar. Het aantal meergezinswoningen is vermeld als percentage van de totale woningvoorraad en wordt alleen vermeld bij minimaal 20 woningen. Meergezinswoning : Elke woning die samen met andere woonruimten c.q. bedrijfsruimten een geheel pand vormt. Hieronder vallen flats, galerij-, portiek-, beneden- en bovenwoningen, appartementen en woningen boven bedrijfsruimten, voor zover deze zijn voorzien van een buiten de bedrijfsruimte gelegen toegangsdeur.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1656
+        },
+        {
+          "ruwe_kolom": "PercentageEengezinswoning_37",
+          "interne_naam": "pct_eengezinswoning",
+          "titel_cbs": "Percentage eengezinswoning",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Peildatum: 1 januari van het desbetreffende jaar. Het aantal eengezinswoningen is vermeld als percentage van de totale woningvoorraad en wordt alleen vermeld bij minimaal 20 woningen. Eengezinswoning: Elke woning die tevens een geheel pand vormt. Hieronder vallen vrijstaande woningen, aaneengebouwde woningen, zoals twee onder één kap gebouwde hele huizen, boerderijen met woningen en voorts alle rijenhuizen.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1656
+        },
+        {
+          "ruwe_kolom": "BouwjaarVanaf2000_47",
+          "interne_naam": "pct_bouwjaar_vanaf_2000",
+          "titel_cbs": "Bouwjaar vanaf 2000",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Peildatum: 1 januari van het desbetreffende jaar. Het aantal woningen met bouwjaar 2000 of later, uitgedrukt in hele procenten van het totaal aantal woningen. Het percentage is vermeld bij 20 woningen of meer per buurt.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1656
+        },
+        {
+          "ruwe_kolom": "BouwjaarVoor2000_46",
+          "interne_naam": "pct_bouwjaar_voor_2000",
+          "titel_cbs": "Bouwjaar voor 2000",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Peildatum: 1 januari van het desbetreffende jaar. Het aantal woningen met bouwjaar vóór 2000, uitgedrukt in hele procenten van het totaal aantal woningen. Het percentage is vermeld bij 20 woningen of meer per buurt.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1656
+        },
+        {
+          "ruwe_kolom": "GemiddeldeHuishoudensgrootte_33",
+          "interne_naam": "gem_huishoudensgrootte",
+          "titel_cbs": "Gemiddelde huishoudensgrootte",
+          "eenheid_cbs": "aantal",
+          "beschrijving_cbs": "Dit gemiddelde is berekend als het aantal in particuliere huishoudens levende personen gedeeld door het aantal particuliere huishoudens.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 405
+        },
+        {
+          "ruwe_kolom": "MateVanStedelijkheid_125",
+          "interne_naam": "stedelijkheid",
+          "titel_cbs": "Mate van stedelijkheid",
+          "eenheid_cbs": "code",
+          "beschrijving_cbs": "Op grond van de omgevingsadressendichtheid is aan iedere buurt, wijk of gemeente een stedelijkheidsklasse toegekend. De volgende klassenindeling is gehanteerd: 1: zeer sterk stedelijk >= 2 500 adressen per km² 2: sterk stedelijk 1 500 - 2 500 adressen per km² 3: matig stedelijk 1 000 - 1 500 adressen per km² 4: weinig stedelijk 500 - 1 000 adressen per km² 5: niet stedelijk < 500 adressen per km²",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 84
+        },
+        {
+          "ruwe_kolom": "GemiddeldeWOZWaardeVanWoningen_36",
+          "interne_naam": "woz_waarde_x1000",
+          "titel_cbs": "Gemiddelde WOZ-waarde van woningen",
+          "eenheid_cbs": "x 1 000 euro",
+          "beschrijving_cbs": "Voor de bepaling van de gemiddelde WOZ-waarde van woningen wordt alleen gebruik gemaakt van BAG-objecten met een woonfunctie waarvoor een WOZ-waarde bekend is en die tussen de 10 duizend en de 5 miljoen euro ligt. Er wordt geen gemiddelde WOZ-waarde bepaald voor een regio als: - de woningvoorraad kleiner is dan 20 woningen - er voor minder dan 20 woningen een WOZ-waarde bekend is - er voor minder dan 85 procent van de woningen een WOZ-waarde bekend is. De gemiddelde woningwaarde wordt bepaald met de waardepeildatum van voorgaand jaar, bijv: - 2023: waardepeildatum 1 januari 2022",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1792
+        },
+        {
+          "ruwe_kolom": "Koopwoningen_41",
+          "interne_naam": "pct_koopwoningen",
+          "titel_cbs": "Koopwoningen",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Woningen die eigendom zijn van de (toekomstige) bewoner(s) of in gebruik als tweede woning. Peildatum: 1 januari van het desbetreffende jaar. Het aantal is vermeld als percentage van het totaal aantal woningen en vermeld bij 20 woningen of meer per buurt en wanneer het aandeel woningen met eigendom onbekend 50 procent of minder bedroeg.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1657
+        },
+        {
+          "ruwe_kolom": "Woningvoorraad_35",
+          "interne_naam": "woningvoorraad",
+          "titel_cbs": "Woningvoorraad",
+          "eenheid_cbs": "aantal",
+          "beschrijving_cbs": "Het totale aantal woningen op 1 januari van het desbetreffende jaar. Een woning is een verblijfsobject met minimaal een woonfunctie en eventueel één of meer andere gebruiksfuncties.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 0
+        },
+        {
+          "ruwe_kolom": "HuishoudensTotaal_29",
+          "interne_naam": "huishoudens_totaal",
+          "titel_cbs": "Huishoudens totaal",
+          "eenheid_cbs": "aantal",
+          "beschrijving_cbs": "Totaal particuliere huishoudens.",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 0
+        },
+        {
+          "ruwe_kolom": "PercentageBewoond_39",
+          "interne_naam": "pct_bewoond",
+          "titel_cbs": "Percentage bewoond",
+          "eenheid_cbs": "%",
+          "beschrijving_cbs": "Peildatum: 1 januari van het desbetreffende jaar. Het aantal bewoonde woningen is vermeld als percentage van de totale woningvoorraad en wordt alleen vermeld bij minimaal 20 woningen. Bewoonde woningen: Woningen waar op de peildatum 1 januari minimaal 1 persoon stond ingeschreven in de Basisregistratie Personen (BRP).",
+          "referentiejaar": 2023,
+          "ontbrekend_in_alle_buurten": 1656
+        }
+      ]
+    }
+  ],
+  "niet_gebruikte_bronnen": [
+    {
+      "tabelcode": "86159NED / 86333NED",
+      "reden": "Niet aanwezig in de projectbestanden; zou een tweede jaar en een aparte koppeling vereisen. Mogelijke uitbreiding."
+    },
+    {
+      "tabelcode": "Enexis open data",
+      "reden": "Postcodeniveau en gasdefinitie; hoort bij het aparte gastraject."
+    }
+  ]
+}

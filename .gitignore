@@ -1,0 +1,12 @@
+# Lokale Python-omgeving en tijdelijke bestanden (niet delen)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.claude/
+# Word-tijdelijke bestanden
+~$*.docx
+
+# Word-rapporten blijven lokaal (niet publiceren)
+report/

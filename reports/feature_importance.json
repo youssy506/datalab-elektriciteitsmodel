@@ -1,0 +1,33 @@
+{
+  "methode": "Permutation importance op de testgemeenten (scikit-learn), 10 herhalingen, maat = toename MAE",
+  "test_mae_kwh": 270.4251276122166,
+  "kenmerken": {
+    "pct_meergezinswoning": {
+      "toename_mae_gemiddeld": 16.615774908782935,
+      "toename_mae_sd": 0.7982606044813312
+    },
+    "pct_bouwjaar_vanaf_2000": {
+      "toename_mae_gemiddeld": 7.615840371665859,
+      "toename_mae_sd": 1.0519980036921721
+    },
+    "gem_huishoudensgrootte": {
+      "toename_mae_gemiddeld": 48.015149001506174,
+      "toename_mae_sd": 3.1784961130948552
+    },
+    "stedelijkheid": {
+      "toename_mae_gemiddeld": 123.61990027649145,
+      "toename_mae_sd": 2.683172582573233
+    },
+    "woz_waarde_x1000": {
+      "toename_mae_gemiddeld": 149.7528806906701,
+      "toename_mae_sd": 3.6808066118692917
+    },
+    "pct_koopwoningen": {
+      "toename_mae_gemiddeld": 67.74239218079944,
+      "toename_mae_sd": 2.7921085081408736
+    }
+  },
+  "let_op": "Samenhangende kenmerken kunnen elkaars belang verbergen. Belang is samenhang, geen oorzaak.",
+  "model_versie": "neighbourhood_electricity_delivery-20261110",
+  "pipeline_sha256": "1e6915395e56c28795be52896fd7c8f243e72cc281e2125de4b84a580ba86b54"
+}

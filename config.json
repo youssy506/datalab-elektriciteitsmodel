@@ -1,0 +1,52 @@
+{
+  "task_name": "neighbourhood_electricity_delivery",
+  "target_internal_name": "electricity_delivery_kwh_per_dwelling_year",
+  "target_raw_column": "GemiddeldeElektriciteitsleveringTotaal_48",
+  "target_definition": "Gemiddelde jaarlijkse elektriciteitslevering uit het openbare net op individuele aansluitingen van particuliere woningen, alle woningtypen samen. Collectieve levering (bijv. lift, galerijverlichting) telt niet mee. Direct verbruikte eigen opwek (zonnepanelen) zit hier niet volledig in.",
+  "target_unit": "kWh per woning per jaar",
+  "target_year": 2023,
+  "geographic_level": "CBS-buurt (wijk- en buurtindeling 2023)",
+
+  "source_table": "85618NED",
+  "source_title": "Kerncijfers wijken en buurten 2023",
+  "source_url": "https://opendata.cbs.nl/ODataApi/OData/85618NED",
+  "raw_file": "data/raw/85618NED_kerncijfers_wijken_buurten_2023.csv",
+  "metadata_file": "data/metadata/85618NED_DataProperties.json",
+
+  "column_mapping": {
+    "Codering_3": "buurt_code",
+    "WijkenEnBuurten": "buurt_naam",
+    "Gemeentenaam_1": "gemeente_naam",
+    "GemiddeldeElektriciteitsleveringTotaal_48": "electricity_delivery_kwh_per_dwelling_year",
+    "PercentageMeergezinswoning_38": "pct_meergezinswoning",
+    "PercentageEengezinswoning_37": "pct_eengezinswoning",
+    "BouwjaarVanaf2000_47": "pct_bouwjaar_vanaf_2000",
+    "BouwjaarVoor2000_46": "pct_bouwjaar_voor_2000",
+    "GemiddeldeHuishoudensgrootte_33": "gem_huishoudensgrootte",
+    "MateVanStedelijkheid_125": "stedelijkheid",
+    "GemiddeldeWOZWaardeVanWoningen_36": "woz_waarde_x1000",
+    "Koopwoningen_41": "pct_koopwoningen",
+    "Woningvoorraad_35": "woningvoorraad",
+    "HuishoudensTotaal_29": "huishoudens_totaal",
+    "PercentageBewoond_39": "pct_bewoond"
+  },
+
+  "feature_sets": {
+    "basis": ["pct_meergezinswoning", "pct_bouwjaar_vanaf_2000", "gem_huishoudensgrootte", "stedelijkheid"],
+    "uitgebreid": ["pct_meergezinswoning", "pct_bouwjaar_vanaf_2000", "gem_huishoudensgrootte", "stedelijkheid", "woz_waarde_x1000", "pct_koopwoningen"]
+  },
+
+  "split": {
+    "group_column": "gemeente_code",
+    "test_size_groups": 0.2,
+    "random_state": 42,
+    "n_cv_folds": 5
+  },
+
+  "models": {
+    "ridge_alpha": 1.0,
+    "random_forest": {"n_estimators": 200, "max_depth": 8, "min_samples_leaf": 20, "random_state": 42, "n_jobs": -1}
+  },
+
+  "reload_tolerance_kwh": 1e-6
+}

@@ -1,0 +1,150 @@
+{
+  "basis": "Alleen trainingsbuurten (zie reports/split_membership.csv), behalve de gemeentevergelijking.",
+  "n_trainingsbuurten": 10878,
+  "doel_mediaan_kwh": 2810.0,
+  "doel_gemiddelde_kwh": 2991.4,
+  "doel_p10_p90_kwh": [
+    2020.0,
+    4190.0
+  ],
+  "correlaties_met_doel": {
+    "pct_meergezinswoning": {
+      "spearman": -0.641,
+      "pearson": -0.611,
+      "n": 10317
+    },
+    "pct_bouwjaar_vanaf_2000": {
+      "spearman": 0.199,
+      "pearson": 0.073,
+      "n": 10317
+    },
+    "gem_huishoudensgrootte": {
+      "spearman": 0.686,
+      "pearson": 0.641,
+      "n": 10866
+    },
+    "woz_waarde_x1000": {
+      "spearman": 0.626,
+      "pearson": 0.597,
+      "n": 10198
+    },
+    "pct_koopwoningen": {
+      "spearman": 0.76,
+      "pearson": 0.698,
+      "n": 10317
+    },
+    "huishoudens_totaal": {
+      "spearman": -0.663,
+      "pearson": -0.467,
+      "n": 10878
+    },
+    "stedelijkheid": {
+      "spearman": 0.706,
+      "pearson": 0.658,
+      "n": 10878
+    }
+  },
+  "mediaan_doel_per_stedelijkheid": {
+    "1": 2060.0,
+    "2": 2420.0,
+    "3": 2630.0,
+    "4": 2910.0,
+    "5": 3610.0
+  },
+  "mediaan_doel_per_meergezinsklasse": {
+    "0-10": 3280.0,
+    "10-30": 2740.0,
+    "30-50": 2370.0,
+    "50-70": 2140.0,
+    "70-90": 2000.0,
+    "90-100": 1800.0
+  },
+  "gemeenten_cbs": {
+    "aantal_met_cijfer": 342,
+    "laagste_10": [
+      {
+        "gemeente_naam": "Amsterdam",
+        "electricity_delivery_kwh_per_dwelling_year": 1880.0
+      },
+      {
+        "gemeente_naam": "Groningen",
+        "electricity_delivery_kwh_per_dwelling_year": 2000.0
+      },
+      {
+        "gemeente_naam": "Leiden",
+        "electricity_delivery_kwh_per_dwelling_year": 2070.0
+      },
+      {
+        "gemeente_naam": "Rotterdam",
+        "electricity_delivery_kwh_per_dwelling_year": 2090.0
+      },
+      {
+        "gemeente_naam": "Vlissingen",
+        "electricity_delivery_kwh_per_dwelling_year": 2120.0
+      },
+      {
+        "gemeente_naam": "Den Helder",
+        "electricity_delivery_kwh_per_dwelling_year": 2120.0
+      },
+      {
+        "gemeente_naam": "Utrecht",
+        "electricity_delivery_kwh_per_dwelling_year": 2120.0
+      },
+      {
+        "gemeente_naam": "Delft",
+        "electricity_delivery_kwh_per_dwelling_year": 2130.0
+      },
+      {
+        "gemeente_naam": "'s-Gravenhage",
+        "electricity_delivery_kwh_per_dwelling_year": 2130.0
+      },
+      {
+        "gemeente_naam": "Haarlem",
+        "electricity_delivery_kwh_per_dwelling_year": 2140.0
+      }
+    ],
+    "hoogste_10": [
+      {
+        "gemeente_naam": "Maasdriel",
+        "electricity_delivery_kwh_per_dwelling_year": 3210.0
+      },
+      {
+        "gemeente_naam": "Reusel-De Mierden",
+        "electricity_delivery_kwh_per_dwelling_year": 3220.0
+      },
+      {
+        "gemeente_naam": "Buren",
+        "electricity_delivery_kwh_per_dwelling_year": 3230.0
+      },
+      {
+        "gemeente_naam": "Boekel",
+        "electricity_delivery_kwh_per_dwelling_year": 3240.0
+      },
+      {
+        "gemeente_naam": "Rucphen",
+        "electricity_delivery_kwh_per_dwelling_year": 3250.0
+      },
+      {
+        "gemeente_naam": "Alphen-Chaam",
+        "electricity_delivery_kwh_per_dwelling_year": 3280.0
+      },
+      {
+        "gemeente_naam": "Tubbergen",
+        "electricity_delivery_kwh_per_dwelling_year": 3310.0
+      },
+      {
+        "gemeente_naam": "Laren",
+        "electricity_delivery_kwh_per_dwelling_year": 3330.0
+      },
+      {
+        "gemeente_naam": "Blaricum",
+        "electricity_delivery_kwh_per_dwelling_year": 3620.0
+      },
+      {
+        "gemeente_naam": "Rozendaal",
+        "electricity_delivery_kwh_per_dwelling_year": 3690.0
+      }
+    ],
+    "mediaan_kwh": 2700.0
+  }
+}

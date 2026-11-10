@@ -1,0 +1,14 @@
+{
+  "methode": "LocalOutlierFactor(n_neighbors=50, novelty=True, contamination=0.01) op de geschaalde kenmerken van trainingsbuurten met alle kenmerken bekend",
+  "grens_pct": 1.0,
+  "alleen_als": "alle kenmerken bekend zijn",
+  "train_n_compleet": 10195,
+  "aandeel_training_gemarkeerd_pct": 0.9,
+  "test_n_compleet": 2423,
+  "test_n_gemarkeerd": 25,
+  "test_aandeel_gemarkeerd_pct": 1.0,
+  "test_mae_gemarkeerd": 536.2789115291594,
+  "test_mae_overig": 248.95160632728047,
+  "model_versie": "neighbourhood_electricity_delivery-20261110",
+  "pipeline_sha256": "1e6915395e56c28795be52896fd7c8f243e72cc281e2125de4b84a580ba86b54"
+}

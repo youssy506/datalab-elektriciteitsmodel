@@ -1,0 +1,359 @@
+{
+  "primaire_foutmaat": "Ongewogen MAE over buurten (kWh per woning per jaar)",
+  "validatie": "GroupKFold binnen trainingsgemeenten; dezelfde folds voor alle modellen",
+  "cross_validatie": {
+    "mediaanbaseline": {
+      "kenmerkenset": "basis",
+      "kenmerken": [
+        "pct_meergezinswoning",
+        "pct_bouwjaar_vanaf_2000",
+        "gem_huishoudensgrootte",
+        "stedelijkheid"
+      ],
+      "MAE_gemiddeld": 680.4854618830291,
+      "MAE_sd": 26.047567464580425,
+      "RMSE_gemiddeld": 856.9126205688656,
+      "RMSE_sd": 29.056082563636778,
+      "R2_gemiddeld": -0.06448496378388188,
+      "R2_sd": 0.06159605256858294,
+      "per_fold": [
+        {
+          "MAE": 713.6183908045977,
+          "RMSE": 874.1909625936771,
+          "R2": -8.861465752962872e-06,
+          "fold": 0,
+          "n_buurten": 2175,
+          "n_gemeenten": 52
+        },
+        {
+          "MAE": 648.1020220588235,
+          "RMSE": 814.8610209452177,
+          "R2": -0.0160024703150472,
+          "fold": 1,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 664.8161764705883,
+          "RMSE": 850.997090355847,
+          "R2": -0.1322742601433311,
+          "fold": 2,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 677.6838235294117,
+          "RMSE": 852.2039441941113,
+          "R2": -0.047998823137463065,
+          "fold": 3,
+          "n_buurten": 2176,
+          "n_gemeenten": 56
+        },
+        {
+          "MAE": 698.2068965517242,
+          "RMSE": 892.3100847554743,
+          "R2": -0.1261404038578151,
+          "fold": 4,
+          "n_buurten": 2175,
+          "n_gemeenten": 55
+        }
+      ]
+    },
+    "ridge_basis": {
+      "kenmerkenset": "basis",
+      "kenmerken": [
+        "pct_meergezinswoning",
+        "pct_bouwjaar_vanaf_2000",
+        "gem_huishoudensgrootte",
+        "stedelijkheid"
+      ],
+      "MAE_gemiddeld": 404.72578022740475,
+      "MAE_sd": 22.022555982763002,
+      "RMSE_gemiddeld": 530.2326235112241,
+      "RMSE_sd": 27.271928551362876,
+      "R2_gemiddeld": 0.5901166459314617,
+      "R2_sd": 0.056706579278640985,
+      "per_fold": [
+        {
+          "MAE": 378.0107324357773,
+          "RMSE": 496.8848622970294,
+          "R2": 0.6769254442932029,
+          "fold": 0,
+          "n_buurten": 2175,
+          "n_gemeenten": 52
+        },
+        {
+          "MAE": 389.85917300611834,
+          "RMSE": 519.5941715341992,
+          "R2": 0.5868990268695646,
+          "fold": 1,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 409.26833032957745,
+          "RMSE": 533.7675375892441,
+          "R2": 0.5545491424197593,
+          "fold": 2,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 435.46580099519247,
+          "RMSE": 571.8957763233851,
+          "R2": 0.5280374994620199,
+          "fold": 3,
+          "n_buurten": 2176,
+          "n_gemeenten": 56
+        },
+        {
+          "MAE": 411.0248643703583,
+          "RMSE": 529.0207698122626,
+          "R2": 0.6041721166127619,
+          "fold": 4,
+          "n_buurten": 2175,
+          "n_gemeenten": 55
+        }
+      ]
+    },
+    "random_forest_basis": {
+      "kenmerkenset": "basis",
+      "kenmerken": [
+        "pct_meergezinswoning",
+        "pct_bouwjaar_vanaf_2000",
+        "gem_huishoudensgrootte",
+        "stedelijkheid"
+      ],
+      "MAE_gemiddeld": 363.155672010372,
+      "MAE_sd": 19.491486301487416,
+      "RMSE_gemiddeld": 497.31094801870574,
+      "RMSE_sd": 22.682775639623348,
+      "R2_gemiddeld": 0.6396496080378042,
+      "R2_sd": 0.04703414732381107,
+      "per_fold": [
+        {
+          "MAE": 347.6090279854225,
+          "RMSE": 472.70031177085644,
+          "R2": 0.7076096729237005,
+          "fold": 0,
+          "n_buurten": 2175,
+          "n_gemeenten": 52
+        },
+        {
+          "MAE": 344.4506066098357,
+          "RMSE": 484.21345300361406,
+          "R2": 0.6412421776693974,
+          "fold": 1,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 371.8922191265585,
+          "RMSE": 506.5032162705776,
+          "R2": 0.5988933159007758,
+          "fold": 2,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 392.13446661437797,
+          "RMSE": 531.440095307733,
+          "R2": 0.5924486370845965,
+          "fold": 3,
+          "n_buurten": 2176,
+          "n_gemeenten": 56
+        },
+        {
+          "MAE": 359.69203971566526,
+          "RMSE": 491.69766374074806,
+          "R2": 0.6580542366105515,
+          "fold": 4,
+          "n_buurten": 2175,
+          "n_gemeenten": 55
+        }
+      ]
+    },
+    "ridge_uitgebreid": {
+      "kenmerkenset": "uitgebreid",
+      "kenmerken": [
+        "pct_meergezinswoning",
+        "pct_bouwjaar_vanaf_2000",
+        "gem_huishoudensgrootte",
+        "stedelijkheid",
+        "woz_waarde_x1000",
+        "pct_koopwoningen"
+      ],
+      "MAE_gemiddeld": 335.08834566574626,
+      "MAE_sd": 13.846315904986135,
+      "RMSE_gemiddeld": 446.27580516650585,
+      "RMSE_sd": 16.389888377595483,
+      "R2_gemiddeld": 0.7113612058299269,
+      "R2_sd": 0.015578903743263869,
+      "per_fold": [
+        {
+          "MAE": 354.43276335557135,
+          "RMSE": 468.2077709094266,
+          "R2": 0.7131410142518828,
+          "fold": 0,
+          "n_buurten": 2175,
+          "n_gemeenten": 52
+        },
+        {
+          "MAE": 329.2247313066751,
+          "RMSE": 441.18603488745856,
+          "R2": 0.7021681148076067,
+          "fold": 1,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 322.59799099474776,
+          "RMSE": 432.3524505907753,
+          "R2": 0.7077386849392977,
+          "fold": 2,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 344.63786955001564,
+          "RMSE": 458.40824373015244,
+          "R2": 0.6967655401412883,
+          "fold": 3,
+          "n_buurten": 2176,
+          "n_gemeenten": 56
+        },
+        {
+          "MAE": 324.54837312172134,
+          "RMSE": 431.2245257147164,
+          "R2": 0.7369926750095593,
+          "fold": 4,
+          "n_buurten": 2175,
+          "n_gemeenten": 55
+        }
+      ]
+    },
+    "random_forest_uitgebreid": {
+      "kenmerkenset": "uitgebreid",
+      "kenmerken": [
+        "pct_meergezinswoning",
+        "pct_bouwjaar_vanaf_2000",
+        "gem_huishoudensgrootte",
+        "stedelijkheid",
+        "woz_waarde_x1000",
+        "pct_koopwoningen"
+      ],
+      "MAE_gemiddeld": 283.60507497371685,
+      "MAE_sd": 9.54350056693748,
+      "RMSE_gemiddeld": 403.1224575507155,
+      "RMSE_sd": 9.500135309545339,
+      "R2_gemiddeld": 0.7639738313951432,
+      "R2_sd": 0.01901916125042338,
+      "per_fold": [
+        {
+          "MAE": 277.94309817947675,
+          "RMSE": 395.70068845523843,
+          "R2": 0.7951080784930602,
+          "fold": 0,
+          "n_buurten": 2175,
+          "n_gemeenten": 52
+        },
+        {
+          "MAE": 271.69447853148404,
+          "RMSE": 395.80486158603554,
+          "R2": 0.7602879174584277,
+          "fold": 1,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 284.3295171932564,
+          "RMSE": 399.5964192490427,
+          "R2": 0.7503459245343924,
+          "fold": 2,
+          "n_buurten": 2176,
+          "n_gemeenten": 55
+        },
+        {
+          "MAE": 296.9249931936615,
+          "RMSE": 418.3022655768076,
+          "R2": 0.7475042056634094,
+          "fold": 3,
+          "n_buurten": 2176,
+          "n_gemeenten": 56
+        },
+        {
+          "MAE": 287.13328777070575,
+          "RMSE": 406.20805288645346,
+          "R2": 0.7666230308264262,
+          "fold": 4,
+          "n_buurten": 2175,
+          "n_gemeenten": 55
+        }
+      ]
+    }
+  },
+  "gekozen_model": "random_forest_uitgebreid",
+  "keuzeregel": "Laagste gemiddelde CV-MAE (mediaanbaseline is alleen referentie)",
+  "test_gekozen_model": {
+    "MAE": 270.4251276122166,
+    "RMSE": 380.34034514281836,
+    "R2": 0.7648389196904002
+  },
+  "test_mediaanbaseline": {
+    "MAE": 655.5145631067961,
+    "RMSE": 819.3655371658889,
+    "R2": -0.09138012573828869
+  },
+  "test_verbetering_mae_tov_baseline_pct": 58.7,
+  "test_n_buurten": 2575,
+  "test_n_gemeenten": 69,
+  "fouten_per_subgroep_test": {
+    "stedelijkheid": {
+      "1.0": {
+        "n": 238,
+        "MAE": 172.45737807803997,
+        "RMSE": 222.88728992704483,
+        "R2": 0.5273567894986843
+      },
+      "2.0": {
+        "n": 385,
+        "MAE": 195.15148862210532,
+        "RMSE": 278.99840754245525,
+        "R2": 0.6127416965018306
+      },
+      "3.0": {
+        "n": 348,
+        "MAE": 224.14478773708072,
+        "RMSE": 340.3953071827601,
+        "R2": 0.5366046642035879
+      },
+      "4.0": {
+        "n": 416,
+        "MAE": 297.4960046779213,
+        "RMSE": 404.2670788624724,
+        "R2": 0.6435229485547154
+      },
+      "5.0": {
+        "n": 1188,
+        "MAE": 318.52340102765515,
+        "RMSE": 432.6668451858937,
+        "R2": 0.5450583353002467
+      }
+    },
+    "kenmerk_ontbreekt": {
+      "False": {
+        "n": 2423,
+        "MAE": 251.91618851054378,
+        "RMSE": 347.3091670358561,
+        "R2": 0.7924326151783481
+      },
+      "True": {
+        "n": 152,
+        "MAE": 565.4722292132248,
+        "RMSE": 726.4967833238572,
+        "R2": 0.29716852330746424
+      }
+    }
+  },
+  "herlaadcontrole_geslaagd": true
+}

@@ -1,0 +1,122 @@
+{
+  "contract": "design_contract.md (in deze map): oppervlak, gebruikers, primaire actie, kleuren met contrastwaarden, invoerregels, hiërarchie per tab, inhoudsstatussen en doelviewports 1440x900 en 390x844.",
+  "targetViewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Contrast berekend met de WCAG-formule: tekst #1C2430 14,7:1; toelichting #4F5866 6,8:1 (vervangt st.caption, die op 60% opacity ca. 4,1:1 haalde - in de browser gecontroleerd: kleur rgb(79,88,102), opacity 1); aslabels #5A6472 5,6:1; amber tekst #8A5A00 5,6:1; amber/petrol vormen >= 3:1; badges grijs 7,4:1 / groen 5,5:1 / oranje 5,7:1; waarschuwingen 7,0:1; witte knoptekst op petrol 7,5:1. Alle invoervelden hebben een gekoppeld label (accessibility tree: textbox 'Meergezinswoningen (%)' enz.). Tabbladen hebben schone namen (eerst lekte Material-ligatuurtekst als 'home_pin Buurt'; alle iconen verwijderd en met JS gecontroleerd: 0 icon-spans). Stedelijkheid is een selectbox (segmented control gaf geen label/geselecteerde waarde door). Toetsenbordfocus zichtbaar: petrol focusring 3,2px (gemeten na 6x Tab). Grafieken hebben tekstequivalenten: metrics boven de meter, getallen aan de balken, '(gekozen)' in het label, toelichtingen onder elke grafiek. Scatter zonder zoom zodat scrollen niet wordt gevangen. Niet getest: echte schermlezer (VoiceOver), Streamlit's eigen +/- knoppen in number_input hebben geen toegankelijke naam (buiten onze controle). Uitbreiding (tier 1): de SHAP-uitleg heeft naast de grafiek een tabel met dezelfde getallen (tekstalternatief); richting staat als +/− in tekst, niet alleen in kleur (petrol/grijsblauw). Nieuwe velden (postcode, eigen levering, CSV-upload) hebben een zichtbaar label. Bekend: Streamlit toont in de uploader en bij Enter in het postcodeveld eigen Engelse hulptekst ('Browse files', 'Press Enter to submit form').",
+    "artifacts": [
+      "after_empty_1440x900.jpg",
+      "after_success_1440x900.jpg"
+    ]
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Op 1440x900 staan formulier en resultaat naast elkaar en eindigt de knop 'Schatting berekenen' op 838px (< 900, gemeten met getBoundingClientRect). Op 390x844 stapelen de kolommen; document.scrollWidth == clientWidth == 390 op de tabs Schatting, Buurt en Gemeenten (geen horizontale scroll); alle vijf tabnamen passen zonder scrollpijl; labels in de leveringsmeter overlappen niet meer (bandlabel naar de toelichting verplaatst, puntlabels alleen bij één markering); de ranglijsttabel scrolt binnen haar eigen kader (Streamlit-dataframe). Bekend: op mobiel staat het resultaat onder het formulier, de gebruiker moet scrollen na 'Schatting berekenen'. Uitbreiding: de uitleggrafiek kreeg korte labels en een tabel eronder, omdat getallen naast de balken op 390 px buiten de grafiek vielen (gezien en verholpen); scrollWidth bleef 390 op Buurt en Model. De vergelijkingstabel scrolt binnen haar eigen kader.",
+    "artifacts": [
+      "after_top_390x844.jpg",
+      "after_partial_390x844.jpg",
+      "after_buurt_390x844.jpg"
+    ]
+  },
+  "contentStates": {
+    "loading": {
+      "status": "pass",
+      "evidence": "st.cache_resource / st.cache_data met show_spinner='Model en gegevens laden…' bij de eerste start; daarna uit de cache. Structuur van de pagina verschijnt pas na laden (geen half-gevulde tabs). Annuleren is niet van toepassing (laden duurt < 1 s lokaal)."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "Voor de eerste schatting toont het resultaatpaneel 'Nog geen schatting', de lege meter met de verdeling van alle buurten en de volgende stap (voorbeeld kiezen of velden invullen). Getest: AppTest test_laadt_zonder_fouten_en_toont_lege_status en 'Alles leegmaken' brengt deze status terug (test_voorbeeld_wisselen_haalt_oud_resultaat_weg). Screenshot after_empty_1440x900.jpg."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Ongeldige invoer (bijv. 150%) en volledig lege invoer geven 'Kan geen schatting maken' met rode melding per veld en de volgende stap. Ontbrekende of beschadigde modelbestanden geven een melding met bestandsnaam en de commando's om opnieuw te trainen in plaats van een traceback. Getest: test_ongeldige_invoer_geeft_foutstatus, test_helemaal_leeg_verzenden_geeft_foutstatus, test_ontbrekend_model_geeft_foutmelding (projectkopie zonder artifacts/ in apart proces). Postcode: ongeldige postcode, geen internet en een onverwacht PDOK-antwoord geven een melding in plaats van een traceback (tests). CSV: onleesbaar bestand, ontbrekende kolommen, te veel rijen en helemaal lege rijen geven een melding of een fout per rij."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Lege velden: schatting plus één waarschuwing 'Gedeeltelijke invoer. Onbekend: …' die uitlegt dat het model ze als ontbrekend behandelt (niet als mediaan) en dat de fout voor die combinatie niet apart getest is. Buurt zonder CBS-waarde: 'niet gepubliceerd' met de juiste reden; buurt zonder woningen: 'geen woningen', geen schatting; buurt met ontbrekende CBS-kenmerken: één waarschuwing 'Gedeeltelijke gegevens'. Getest: test_lege_velden_geven_gedeeltelijke_status, test_buurt_zonder_woningen_krijgt_geen_schatting, test_buurt_met_ontbrekende_kenmerken_geeft_een_waarschuwing. Screenshots after_partial_390x844.jpg en after_buurt_geen_woningen_1440x900.jpg. Postcode in een buurtcode die niet in de indeling 2023 staat: waarschuwing dat de getoonde buurt waarschijnlijk niet de juiste is. Ongewone combinatie van kenmerken: aparte waarschuwing met wat de test erover zegt."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Na 'Schatting berekenen': getal in kWh (afgerond op tientallen), eenheid en jaar, leveringsmeter met amber stip, percentiel, nauwkeurigheid (test-MAE als gemiddelde, geen garantie) en een 'Wat als'-uitklapper. Wordt de invoer daarna gewijzigd, dan meldt de app dat opnieuw berekenen nodig is. Getest: test_voorbeeld_vult_velden_en_geeft_schatting. Screenshot after_success_1440x900.jpg."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "Lokale app op localhost zonder accounts of rollen; alle gegevens zijn openbare CBS-cijfers. Er is geen toegangsgrens om te tonen."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x900",
+      "artifact": "before_1440x900.jpg",
+      "observation": "Oude versie: donker standaardthema, rode knop, resultaat onder het formulier, afgekapte placeholders, geen context bij de uitkomst."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_empty_1440x900.jpg",
+      "observation": "Lege status: licht thema, formulier links en lege meter rechts, knop volledig zichtbaar, alle labels Nederlands ('onbekend')."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_success_1440x900.jpg",
+      "observation": "Succes: 3.180 kWh voor een typische weinig stedelijke buurt, amber stip in de meter, 'Hoger dan 64%', nauwkeurigheidsblok; alles zonder scrollen zichtbaar."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_buurt_train_1440x900.jpg",
+      "observation": "Buurt 't Hofke (training): open CBS-ruit en gevulde schattingsstip blijven allebei zichtbaar bij 30 kWh verschil; oranje trainingsbadge met uitleg."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_buurt_geen_woningen_1440x900.jpg",
+      "observation": "Buurt Poeijers (0 woningen): 'niet gepubliceerd' en 'geen woningen', geen meter en geen verzonnen schatting."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_gemeenten_1440x900.jpg",
+      "observation": "Eindhoven 'gedeeld 26 van 342'; band, buurtstreepjes en amber gemeentelijn zichtbaar; ranglijst met gedeelde plekken (5, 5, 5, 8) en Nederlandse notatie (474.866)."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_model_1440x900.jpg",
+      "observation": "Groene delta -390 kWh t.o.v. baseline, R² 0,76, balken gesorteerd met getallen en '(gekozen)', bias aan de randen gekwantificeerd (500 kWh te laag / 200 kWh te hoog)."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "after_top_390x844.jpg",
+      "observation": "Mobiele kop: twee badges, korte uitleg, alle vijf tabs passen; geen horizontale scroll."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "after_partial_390x844.jpg",
+      "observation": "Gedeeltelijke invoer op mobiel: 3.600 kWh, meter zonder overlappende labels, toelichting en nauwkeurigheidsblok breken netjes af."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "after_buurt_390x844.jpg",
+      "observation": "Buurt-tab op mobiel: keuzelijsten en metrics gestapeld, badge leesbaar, geen horizontale scroll."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_postcode_1440x900.jpg",
+      "observation": "Postcode 1012 JS via PDOK: gemeente Amsterdam en buurt Oude Kerk e.o. automatisch gekozen; melding noemt ook Nes e.o. (6 adressen)."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_uitleg_1440x900.jpg",
+      "observation": "Buurt Binnenstad (5611 AA): meter, veld voor eigen levering en open 'Waarom deze schatting?' met watervalgrafiek van 2.990 naar 1.850 kWh en de tabel eronder."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "after_model_uitleg_1440x900.jpg",
+      "observation": "Model-tab: kenmerkbelang met getallen aan de balken (geen afgekapte labels), tekst over samenhangende kenmerken, combinatiecontrole (25 van 2.423, geen foutmaat onder 30) en download van alle buurten."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "after_uitleg_390x844.jpg",
+      "observation": "Mobiel: uitleggrafiek met korte labels past binnen het kader; tabel met waarde en bijdrage per kenmerk eronder. (Opname vóór labelFlush; het laatste asgetal stond toen nog iets afgekapt, daarna verholpen maar niet opnieuw vastgelegd.)"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Thema en serverinstellingen voor de app (zie reports/design/design_contract.md)
+
+[server]
+# Geen vast adres: zo werkt de app ook online (Streamlit Community Cloud).
+# Lokaal alleen op deze computer draaien: streamlit run app.py --server.address localhost
+port = 8501
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0F5F5C"            # petrol: acties en het model
+backgroundColor = "#FAF8F3"         # warm papierwit
+secondaryBackgroundColor = "#EFECE4"
+textColor = "#1C2430"
+linkColor = "#0F5F5C"
+borderColor = "#DDD8CC"
+showWidgetBorder = true
+baseRadius = "0.45rem"
+font = "sans-serif"
+headingFont = "serif"
+headingFontSizes = ["2.05rem", "1.45rem", "1.15rem"]
+headingFontWeights = [600, 600, 600]
+metricValueFontSize = "2.6rem"
+metricValueFontWeight = 600
+chartCategoricalColors = ["#0F5F5C", "#B07600", "#5B7083", "#9C4A3C", "#6B8F4E"]
+# Tekstkleuren van badges, :gray[]-tekst en meldingen: allemaal >= 4,5:1 op hun achtergrond
+grayTextColor = "#4F5866"
+grayBackgroundColor = "#E6E3DB"
+greenTextColor = "#1E6B3A"
+greenBackgroundColor = "#E3EFE6"
+orangeTextColor = "#8A4B00"
+orangeBackgroundColor = "#F6E9DA"
+yellowTextColor = "#6B4E00"
+yellowBackgroundColor = "#FBF3D9"
+
+[theme.sidebar]
+backgroundColor = "#F2EFE8"
+
+[client]
+# Geen "Deploy"-knop en ontwikkelaarsmenu in de kopbalk
+toolbarMode = "viewer"
